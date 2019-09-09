@@ -1,0 +1,6 @@
+Un Jugador escoge 4 colores ( o mas en un futuro)
+muerto mismo color misma posicion
+herido mismo color distinta posicion
+colores: rojo verde amarillo azul, blanco y negro. r b y g o p red blue yellow green orange purple
+Sin repetidos
+A los diez intentos pierdes
