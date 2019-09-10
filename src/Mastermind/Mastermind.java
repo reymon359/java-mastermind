@@ -1,7 +1,17 @@
 package Mastermind;
 
 public class Mastermind {
- 
+
+	static String[] colourNames = {"red", "blue", "yellow", "green", "orange", "purple"};
+
+	static int[] permutation = {0,1,2,3,4,5};
+
+	static String colourCode = "rbygop";  
+
+	static String secretCode = "abcd"; 
+
+
+
   static String getPlayerGuess() {
     return "ABCD";  
   }
@@ -19,9 +29,21 @@ public class Mastermind {
   static void setDifficulty() {
   }
  
+  //  Knuth Shuffling algorithm to randomize the permutation array
   static void shuffle() {
+    for (int i = 0; i < permutation.length; i++) {
+      int random = (int) (Math.random() * permutation.length);
+      int t = permutation[i];
+      permutation[i] = permutation[random];
+      permutation[random] = t;
+    }
+   
+    secretCode = "";
+    for (int i = 0; i < 4; i++) {
+      secretCode += colourCode.charAt( permutation[i] );
+    }
   }
- 
+
   static boolean replay() {
     return false;  
   }
