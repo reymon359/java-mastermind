@@ -24,6 +24,14 @@ public class Mastermind {
   }
  
   static void displaySolution() {
+    String s = "[";
+    for (int i = 0; i < 4; i++) {
+      if (i != 0) s += ", ";
+      s += colourNames[ permutation[i] ];
+    }
+    s += "]";
+   
+    System.out.println(s);
   }
  
   static void setDifficulty() {
