@@ -133,13 +133,13 @@ public class Mastermind {
   }
  
   static void game() {
-    boolean success=false;
+    boolean success = false;
     while (!success) {
-      String guess=getPlayerGuess();
-      success=calculateScore(guess);
+      String guess = getPlayerGuess();
+      success = calculateScore(guess);
       displayScore(guess);
     }
-    System.out.println("The solution is : ");
+    System.out.println("Good Job! The solution is : ");
     displaySolution();
   }
  
