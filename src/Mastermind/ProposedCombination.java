@@ -7,6 +7,7 @@ public class ProposedCombination extends Combination {
 		String line="";
 		while (!inputDone) {
 			System.out.println("Colour Code : "+ colourCode);
+			Result.displayPreviousResults();
 			System.out.print("Enter your guess : ");
 			line = getInputLine();
 			String error = validateInput(line);

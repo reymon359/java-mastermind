@@ -2,8 +2,6 @@ package Mastermind;
 
 public class Mastermind {
 
-	// Combinaciones
-
 	static void game() {
 		new SecretCombination();
 
