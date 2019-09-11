@@ -46,14 +46,12 @@ public class Mastermind {
 	  line = line.toLowerCase();
 	  if (line.length()!=4) return "Must enter 4 letters";
 	 
-	  // check each character
 	  boolean[] choice=new boolean[colourNames.length];
 	  for (int i=0;i<line.length();i++)
 	  {
 	    char ch=line.charAt(i);
 	    int j=getColourIndex(ch);
 	    if (j==-1) return "Invalid Colour";
-//	    if (choice[j]) return "Repeated Colour.";
 	    choice[j]=true;
 	  }
 	   
@@ -77,7 +75,6 @@ public class Mastermind {
 		}
 		boolean success=false;
 		if ( deads==4) success=true;
-//		if (difficulty==EASY && injureds==4) success=true;
 		return success;
 	}
 
