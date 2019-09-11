@@ -17,6 +17,8 @@ What have been done in each version of the game.
 The game is playable, playable meaning you can start, try your combinations and if it is the secret one, win the game.
 
 **Structure**
+
 The game is just one single class that contains all the attributes and methods of the game.
+
 ![Class diagram Version 1.0.0](/Sources/version1.0.0.png)
 
