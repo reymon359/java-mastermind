@@ -3,8 +3,8 @@ package Mastermind;
 public class ProposedCombination extends Combination {
 
 	static String getPlayerGuess() {
-		boolean inputDone=false;
-		String line="";
+		boolean inputDone = false;
+		String line = "";
 		while (!inputDone) {
 			System.out.println("Colour Code : "+ colourCode);
 			Result.displayPreviousResults();
@@ -12,7 +12,7 @@ public class ProposedCombination extends Combination {
 			line = getInputLine();
 			String error = validateInput(line);
 			if (error.equals("OK"))
-				inputDone =true;
+				inputDone = true;
 			else
 				System.out.println(error);
 		}

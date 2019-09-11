@@ -39,7 +39,7 @@ public class Result {
 	}
 
 	static void displaySolution() {
-		System.out.println("Good Job! The solution is : ");
+		
 
 		String s = "[";
 		for (int i = 0; i < 4; i++) {

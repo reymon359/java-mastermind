@@ -17,10 +17,16 @@ public class Mastermind {
 		do {
 			guess = ProposedCombination.getPlayerGuess();
 			Result.displayScore(guess);
+			if ( Result.previousResults.size() == 10) { 
+				System.out.println("GAME OVER! The solution was: ");
+				break;
+			}
         } while (!Result.calculateScore(guess));
 		
+		if ( Result.calculateScore(guess)) System.out.println("Good Job! The solution is : ");
 		Result.displaySolution();
 	}
+
 
 	public static void main(String[] args) throws Exception {
 		game();
