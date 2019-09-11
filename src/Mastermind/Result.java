@@ -23,7 +23,7 @@ public class Result {
 	static void displayScore(String guess) {
 		String s = "";
 
-		s = "Guess: [";
+		s = "Guess " + (previousResults.size() + 1) + " : [";
 		for (int i = 0; i < guess.length(); i++){
 			if (i != 0) s += ", ";
 			int j = Combination.colourCode.indexOf(guess.charAt(i));
