@@ -8,6 +8,4 @@ public class Combination {
 
 	static String colourCode = "rbygop";  
 	
-	static int deads, injureds;
-	
 }
