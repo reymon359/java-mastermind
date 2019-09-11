@@ -13,12 +13,6 @@ public class Mastermind {
 	static void game() {
 		new SecretCombination();
 		introduction();
-//		boolean success = false;
-//		while (!success) {
-//			String guess = ProposedCombination.getPlayerGuess();
-//			success = Result.calculateScore(guess);
-//			Result.displayScore(guess);
-//		}
 		String guess;
 		do {
 			guess = ProposedCombination.getPlayerGuess();
