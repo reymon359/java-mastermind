@@ -15,8 +15,8 @@ public class Result {
 			if (i == j) deads++;
 			if (j >= 0) injureds++;
 		}
-		boolean success=false;
-		if ( deads == 4) success=true;
+		boolean success = false;
+		if ( deads == guess.length()) success = true;
 		return success;
 	}
 
@@ -29,9 +29,9 @@ public class Result {
 			int j = Combination.colourCode.indexOf(guess.charAt(i));
 			s += Combination.colourNames[j];
 		}
-		s += "]";
+		s += "] ";
 
-		s += " injured is " + injureds + "   dead is " + deads;
+		s += "Injureds: " + injureds + ", deads: " + deads;
 
 		previousResults.add(s);
 
