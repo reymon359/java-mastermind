@@ -2,7 +2,6 @@ package Mastermind;
 
 public class ProposedCombination extends Combination {
 
-
 	static String getPlayerGuess() {
 		boolean inputDone=false;
 		String line="";
