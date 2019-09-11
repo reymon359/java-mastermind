@@ -2,8 +2,6 @@ package Mastermind;
 
 import java.util.ArrayList;
 
-import java.util.ArrayList;
-
 public class Result {
 
 	static int deads, injureds;
@@ -57,12 +55,11 @@ public class Result {
 		
 		if (previousResults.size() == 0) return;
 		
-		String s = "The previous results";
+		String s = "The previous results are: \n";
 		for (int i = 0; i < previousResults.size(); i++) {
-			if (i != 0) s += ", ";
-			s += Combination.colourNames[ Combination.permutation[i] ];
+			
+			s += previousResults.get(i) + "\n";
 		}
-		s += "]";
 
 		System.out.println(s);
 		
