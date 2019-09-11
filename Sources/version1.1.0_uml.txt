@@ -4,6 +4,7 @@ class Mastermind {
   +play()
 }
 
+
 class Combination {
  -Int deads
  -Int injureds
@@ -14,7 +15,8 @@ class Combination {
 
 class SecretCombination {
  -String secretCode
- +displaySolution()
+ +SecretCombination()
+ +getSecretCombination()
  +shuffle()
 }
 
@@ -28,10 +30,19 @@ class ProposedCombination {
 class Result {
  +calculateScore(String)
  +displayScore(String)
+ +displaySolution()
 }
 
 class Colour {
  
 }
+
+
+Mastermind *-down- SecretCombination
+Mastermind *-down- ProposedCombination
+Mastermind *-down- Result
+Combination <|-down- SecretCombination: Inheritance
+Combination <|-down- ProposedCombination: Inheritance
+Combination *-down- Colour
 
 @enduml

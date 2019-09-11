@@ -1,5 +1,5 @@
 package Mastermind;
 
-public class ProposedCombination {
+public class ProposedCombination extends Combination {
 
 }
