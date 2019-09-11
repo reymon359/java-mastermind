@@ -1,0 +1,21 @@
+@startuml
+
+class Mastermind {
+    -String[] colourNames
+    -Int[] permutation
+    -String colourCode
+    -String secretCode
+    -Int deads
+    -Int injureds
+    +getPlayerGuess()
+    +getInputLine()
+    +validateInput(String)
+    +getColourIndex(Char)
+    +calculateScore(String)
+    +displayScore(String)
+    +displaySolution()
+    +shuffle()
+    +game()
+}
+
+@enduml

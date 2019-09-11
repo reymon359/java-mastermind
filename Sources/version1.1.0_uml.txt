@@ -1,0 +1,37 @@
+@startuml
+
+class Mastermind {
+  +play()
+}
+
+class Combination {
+ -Int deads
+ -Int injureds
+ -String[] colourNames
+ -Int[] permutation
+ -String colourCode
+}
+
+class SecretCombination {
+ -String secretCode
+ +displaySolution()
+ +shuffle()
+}
+
+class ProposedCombination {
+ +getPlayerGuess()
+ +getInputLine()
+ +validateInput(String)
+ +getColourIndex(Char)
+}
+
+class Result {
+ +calculateScore(String)
+ +displayScore(String)
+}
+
+class Colour {
+ 
+}
+
+@enduml

@@ -135,9 +135,7 @@ public class Mastermind {
   }
  
   public static void main(String[] args) throws Exception {
-  
-      shuffle();
-      game();
-   
+        shuffle();
+        game();
   }
 }
