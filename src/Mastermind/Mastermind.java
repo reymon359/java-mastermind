@@ -9,10 +9,8 @@ public class Mastermind {
 	static String colourCode = "rbygop";  
 
 	static String secretCode = "abcd"; 
-	// mastermind convention :
-	//  black : correct animal at correct position
-	//  white : correct animal at incorrect position
-	static int blackScore, whiteScore; 
+	
+	static int deads, injureds; 
 
 
 	static String getPlayerGuess() {
@@ -70,16 +68,16 @@ public class Mastermind {
 
 
 	static boolean calculateScore(String guess)	{
-		blackScore = whiteScore = 0;
+		deads = injureds = 0;
 		for (int i = 0; i < guess.length(); i++) {
 			char ch = guess.charAt(i);
 			int j = secretCode.indexOf(ch);
-			if (i == j) blackScore++;
-			if (j >= 0) whiteScore++;
+			if (i == j) deads++;
+			if (j >= 0) injureds++;
 		}
 		boolean success=false;
-		if ( blackScore==4) success=true;
-//		if (difficulty==EASY && whiteScore==4) success=true;
+		if ( deads==4) success=true;
+//		if (difficulty==EASY && injureds==4) success=true;
 		return success;
 	}
 
@@ -94,7 +92,7 @@ public class Mastermind {
 		}
 		s += "]";
 
-		s += " injured is " + whiteScore + "   dead is " + blackScore;
+		s += " injured is " + injureds + "   dead is " + deads;
 
 
 		System.out.println(s);
@@ -127,10 +125,6 @@ public class Mastermind {
       secretCode += colourCode.charAt( permutation[i] );
     }
   }
-
-  static boolean replay() {
-    return false;  
-  }
  
   static void game() {
     boolean success = false;
@@ -144,10 +138,9 @@ public class Mastermind {
   }
  
   public static void main(String[] args) throws Exception {
-    while (true) {
+  
       shuffle();
       game();
-      if (!replay()) break;
-    }
+   
   }
 }
