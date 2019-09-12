@@ -36,10 +36,10 @@ public class ProposedCombination extends Combination {
 		line = line.toLowerCase();
 		if (line.length()!= 4) return "Must enter 4 letters";
 
-		boolean[] choice=new boolean[colourNames.length];
+		boolean[] choice = new boolean[colourNames.length];
 		for (int i = 0; i < line.length(); i++)
 		{
-			char ch=line.charAt(i);
+			char ch = line.charAt(i);
 			int j = getColourIndex(ch);
 			if (j == -1) return "Invalid Colour";
 			choice[j] = true;

@@ -61,3 +61,5 @@ Although the game is playable and you can complete a match there are some things
 * The game does not show the precious combinations in the window, it just shows the last combination.
 * There should be some kind of replayability
 
+=== Version 1.1.0
+

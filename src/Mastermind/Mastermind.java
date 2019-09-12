@@ -16,6 +16,7 @@ public class Mastermind {
 		String guess;
 		do {
 			guess = ProposedCombination.getPlayerGuess();
+			Result.calculateScore(guess);
 			Result.displayScore(guess);
 			if ( Result.previousResults.size() == 10) { 
 				System.out.println("GAME OVER! The solution was: ");
