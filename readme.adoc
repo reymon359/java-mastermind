@@ -63,3 +63,80 @@ Although the game is playable and you can complete a match there are some things
 
 === Version 1.1.0
 
+The game is still playable and new functionalities have been added:
+
+* Now there is a limit of guesses, 10.
+* There is an Introduction to the game that presents and explains the game.
+* The structure is now divided in clases after *abstracting* the stuff related and creating new classes.
+* The game also shows the user the previous guesses.
+
+*Console output:*
+
+----
+Welcome to Mastermind.
+You can guess the secret combination 10 times.
+Good luck!
+Colour Code : rbygop
+Enter your guess : rygb
+Guess 1 : [red, yellow, green, blue] Injureds: 3, deads: 0
+Colour Code : rbygop
+The previous results are: 
+Guess 1 : [red, yellow, green, blue] Injureds: 3, deads: 0
+
+Enter your guess : rrrr
+Guess 2 : [red, red, red, red] Injureds: 0, deads: 0
+Colour Code : rbygop
+The previous results are: 
+Guess 1 : [red, yellow, green, blue] Injureds: 3, deads: 0
+Guess 2 : [red, red, red, red] Injureds: 0, deads: 0
+
+Enter your guess : ygbr
+Guess 3 : [yellow, green, blue, red] Injureds: 3, deads: 3
+Colour Code : rbygop
+The previous results are: 
+Guess 1 : [red, yellow, green, blue] Injureds: 3, deads: 0
+Guess 2 : [red, red, red, red] Injureds: 0, deads: 0
+Guess 3 : [yellow, green, blue, red] Injureds: 3, deads: 3
+
+Enter your guess : ygbo
+Guess 4 : [yellow, green, blue, orange] Injureds: 3, deads: 3
+Colour Code : rbygop
+The previous results are: 
+Guess 1 : [red, yellow, green, blue] Injureds: 3, deads: 0
+Guess 2 : [red, red, red, red] Injureds: 0, deads: 0
+Guess 3 : [yellow, green, blue, red] Injureds: 3, deads: 3
+Guess 4 : [yellow, green, blue, orange] Injureds: 3, deads: 3
+
+Enter your guess : ygbp
+Guess 5 : [yellow, green, blue, purple] Injureds: 4, deads: 4
+Good Job! The solution is : 
+[yellow, green, blue, purple]
+
+----
+
+Game over. If you pass the guess limit.
+
+----
+Guess 9 : [red, red, red, red] Injureds: 4, deads: 1
+
+Enter your guess : rrrr
+Guess 10 : [red, red, red, red] Injureds: 4, deads: 1
+GAME OVER! The solution was: 
+[red, purple, green, blue]
+
+----
+
+*Structure*
+
+The game is now structured by more than one class.
+
+.Version 1.1.0 Structure
+image::./Sources/version1.1.0.png[Class diagram Version 1.1.0]
+
+*About this version*
+
+The structure seems better but still has some problems.
+
+* The class colour was done but never used. *YAGNI*
+* The game still lacks replayability
+* The structure could be done much better.

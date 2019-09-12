@@ -2,7 +2,7 @@ package Mastermind;
 
 public class SecretCombination extends Combination {
 	static String secretCode = "abcd"; 
-
+	
 	public SecretCombination() {
 		//  Knuth Shuffling algorithm to randomize the permutation array
 		for (int i = 0; i < permutation.length; i++) {
