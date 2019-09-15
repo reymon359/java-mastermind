@@ -3,7 +3,7 @@ package Mastermind;
 import java.util.ArrayList;
 
 public class Result {
-	String guess,secretCode,text;
+	String guess, secretCode ,text;
 	int deads, injureds;
 
 
@@ -46,7 +46,7 @@ public class Result {
 		String s = "[";
 		for (int i = 0; i < 4; i++) {
 			if (i != 0) s += ", ";
-			s += Combination.colourNames[ Combination.permutation[i] ];
+			s += Combination.colourNames[ secretCode.charAt(i) ];
 		}
 		s += "]";
 		System.out.println(s);
