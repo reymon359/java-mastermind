@@ -3,44 +3,48 @@ package Mastermind;
 import java.util.ArrayList;
 
 public class Result {
+	String guess;
+	String secretCode;
+	int deads, injureds;
 
-	static int deads, injureds;
-	static ArrayList<String> previousResults = new ArrayList<String>();
 
-	static boolean calculateScore(String guess)	{
+	public Result(String guess, String secretCode) {
+		this.guess = guess;
+		this.secretCode = secretCode;
+		this.calculateScore();
+		this.displayResult();
+	}
+
+	public boolean calculateScore()	{
 		deads = injureds = 0;
-		for (int i = 0; i < guess.length(); i++) {
-			char ch = guess.charAt(i);
-			int j = SecretCombination.getSecretCombination().indexOf(ch);
+		for (int i = 0; i < this.guess.length(); i++) {
+			char ch = this.guess.charAt(i);
+			int j = this.secretCode.indexOf(ch);
 			if (i == j) deads++;
 			if (j >= 0) injureds++;
 		}
 		boolean success = false;
-		if ( deads == guess.length()) success = true;
+		if ( deads == this.guess.length()) success = true;
 		return success;
 	}
 
-	static void displayScore(String guess) {
+	public void displayResult() {
 		String s = "";
 
-		s = "Guess " + (previousResults.size() + 1) + " : [";
-		for (int i = 0; i < guess.length(); i++){
+		s = "Guess " + (Mastermind.previousResults.size() + 1) + " : [";
+		for (int i = 0; i < this.guess.length(); i++){
 			if (i != 0) s += ", ";
-			int j = Combination.colourCode.indexOf(guess.charAt(i));
+			int j = Combination.colourCode.indexOf(this.guess.charAt(i));
 			s += Combination.colourNames[j];
 		}
 		s += "] ";
 
 		s += "Injureds: " + injureds + ", deads: " + deads;
-
-		previousResults.add(s);
-
+		this.previousResults.add(s);
 		System.out.println(s);
 	}
 
-	static void displaySolution() {
-		
-
+	public void displaySolution() {
 		String s = "[";
 		for (int i = 0; i < 4; i++) {
 			if (i != 0) s += ", ";
@@ -51,18 +55,6 @@ public class Result {
 		System.out.println(s);
 	}
 
-	static void displayPreviousResults() {
 
-		if (previousResults.size() == 0) return;
-
-		String s = "The previous results are: \n";
-		for (int i = 0; i < previousResults.size(); i++) {
-
-			s += previousResults.get(i) + "\n";
-		}
-
-		System.out.println(s);
-
-	}
 
 }

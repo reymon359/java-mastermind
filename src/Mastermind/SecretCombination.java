@@ -1,7 +1,7 @@
 package Mastermind;
 
 public class SecretCombination extends Combination {
-	static String secretCode = "abcd"; 
+	private String secretCode = "abcd";
 	
 	public SecretCombination() {
 		//  Knuth Shuffling algorithm to randomize the permutation array
@@ -16,9 +16,10 @@ public class SecretCombination extends Combination {
 		for (int i = 0; i < 4; i++) {
 			secretCode += colourCode.charAt( permutation[i] );
 		} 
+		
 	}
 
-	static String getSecretCombination(){
+	public String getSecretCombination(){
 		return secretCode;
 	}
 

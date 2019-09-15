@@ -1,20 +1,38 @@
 package Mastermind;
 
+import java.util.ArrayList;
+
 public class Mastermind {
 
-	static void introduction() {
+	private SecretCombination secretCombination;
+
+	public ArrayList<String> previousResults = new ArrayList<String>();
+
+	
+	void introduction() {
 		String s = "Welcome to Mastermind.\n"
 				+ "You can guess the secret combination 10 times.\n"
 				+ "Good luck!";
 		System.out.println(s);
 	}
-	
-	
-	static void game() {
-		new SecretCombination();
-		introduction();
+
+	public void displayPreviousResults() {
+		if (this.previousResults.size() == 0) return;
+
+		String s = "The previous results are: \n";
+		for (int i = 0; i < this.previousResults.size(); i++) {
+			s += this.previousResults.get(i) + "\n";
+		}
+
+		System.out.println(s);
+	}
+
+	void game() {
+		this.secretCombination = new SecretCombination();
+		this.introduction();
 		String guess;
 		do {
+			this.displayPreviousResults();
 			guess = ProposedCombination.getPlayerGuess();
 			Result.calculateScore(guess);
 			Result.displayScore(guess);
@@ -29,7 +47,8 @@ public class Mastermind {
 	}
 
 
+	
 	public static void main(String[] args) throws Exception {
-		game();
+		new Mastermind().game();
 	}
 }
