@@ -6,6 +6,11 @@ public class Combination {
 
 	static int[] permutation = {0,1,2,3,4,5};
 
-	static String colourCode = "rbygop";  
+	static String colourCode = "rbygop";
+
+
+	static int getColourIndex(char a) {
+		return colourCode.indexOf(a);
+	}
 
 }

@@ -1,8 +1,13 @@
 package Mastermind;
 
 public class ProposedCombination extends Combination {
+	String guess;
 
-	static String getPlayerGuess() {
+	public ProposedCombination() {
+		this.getPlayerGuess();
+	}
+
+	public void getPlayerGuess() {
 		boolean inputDone = false;
 		String line = "";
 		while (!inputDone) {
@@ -16,10 +21,10 @@ public class ProposedCombination extends Combination {
 			else
 				System.out.println(error);
 		}
-		return line.toLowerCase();
+		this.guess = line.toLowerCase();
 	}
 
-	static String getInputLine() {
+	private String getInputLine() {
 		try {
 			String line = new java.io.BufferedReader(
 					new java.io.InputStreamReader(System.in)
@@ -30,9 +35,9 @@ public class ProposedCombination extends Combination {
 		catch (Exception e) {
 			return "";
 		}
-	} 
+	}
 
-	static String validateInput(String line) {
+	private String validateInput(String line) {
 		line = line.toLowerCase();
 		if (line.length()!= 4) return "Must enter 4 letters";
 
@@ -48,7 +53,6 @@ public class ProposedCombination extends Combination {
 		return "OK";
 	}
 
-	static int getColourIndex(char a) {
-		return colourCode.indexOf(a);
-	}
+
+
 }

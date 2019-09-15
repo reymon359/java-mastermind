@@ -1,12 +1,14 @@
 package Mastermind;
 
 import java.util.ArrayList;
+import java.util.Collection;
 
 public class Mastermind {
 
 	private SecretCombination secretCombination;
+	private ProposedCombination proposedCombination;
 
-	public ArrayList<String> previousResults = new ArrayList<String>();
+	static ArrayList<String> previousResults = new ArrayList<String>();
 
 	
 	void introduction() {
@@ -30,20 +32,21 @@ public class Mastermind {
 	void game() {
 		this.secretCombination = new SecretCombination();
 		this.introduction();
-		String guess;
+		Result result;
 		do {
 			this.displayPreviousResults();
-			guess = ProposedCombination.getPlayerGuess();
-			Result.calculateScore(guess);
-			Result.displayScore(guess);
-			if ( Result.previousResults.size() == 10) { 
+			this.proposedCombination = new ProposedCombination();
+			result = new Result(this.proposedCombination.guess, this.secretCombination.secretCode);
+			this.previousResults.add(result.text);
+
+			if ( this.previousResults.size() == 10) {
 				System.out.println("GAME OVER! The solution was: ");
 				break;
 			}
-        } while (!Result.calculateScore(guess));
+        } while (!result.calculateScore());
 		
-		if ( Result.calculateScore(guess)) System.out.println("Good Job! The solution is : ");
-		Result.displaySolution();
+		if ( result.calculateScore()) System.out.println("Good Job! The solution is : ");
+		result.displaySolution();
 	}
 
 

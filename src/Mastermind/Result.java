@@ -3,8 +3,7 @@ package Mastermind;
 import java.util.ArrayList;
 
 public class Result {
-	String guess;
-	String secretCode;
+	String guess,secretCode,text;
 	int deads, injureds;
 
 
@@ -12,7 +11,7 @@ public class Result {
 		this.guess = guess;
 		this.secretCode = secretCode;
 		this.calculateScore();
-		this.displayResult();
+		this.displayResultText();
 	}
 
 	public boolean calculateScore()	{
@@ -28,20 +27,19 @@ public class Result {
 		return success;
 	}
 
-	public void displayResult() {
+	public void displayResultText() {
 		String s = "";
 
-		s = "Guess " + (Mastermind.previousResults.size() + 1) + " : [";
+		this.text = "Guess " + (Mastermind.previousResults.size() + 1) + " : [";
 		for (int i = 0; i < this.guess.length(); i++){
-			if (i != 0) s += ", ";
+			if (i != 0) this.text += ", ";
 			int j = Combination.colourCode.indexOf(this.guess.charAt(i));
-			s += Combination.colourNames[j];
+			this.text += Combination.colourNames[j];
 		}
-		s += "] ";
+		this.text += "] ";
 
-		s += "Injureds: " + injureds + ", deads: " + deads;
-		this.previousResults.add(s);
-		System.out.println(s);
+		this.text += "Injureds: " + injureds + ", deads: " + deads;
+		System.out.println(this.text);
 	}
 
 	public void displaySolution() {
@@ -51,7 +49,6 @@ public class Result {
 			s += Combination.colourNames[ Combination.permutation[i] ];
 		}
 		s += "]";
-
 		System.out.println(s);
 	}
 
