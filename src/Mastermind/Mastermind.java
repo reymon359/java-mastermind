@@ -28,6 +28,16 @@ public class Mastermind {
         System.out.println(s);
     }
 
+    public void displaySolution() {
+        String s = "[";
+        for (int i = 0; i < 4; i++) {
+            if (i != 0) s += ", ";
+            s += Combination.colourNames[Combination.colourCode.indexOf(this.secretCombination.secretCode.charAt(i))];
+        }
+        s += "]";
+        System.out.println(s);
+    }
+
     void game() {
         this.secretCombination = new SecretCombination();
         this.introduction();
@@ -38,14 +48,15 @@ public class Mastermind {
             result = new Result(this.proposedCombination.guess, this.secretCombination.secretCode);
             this.previousResults.add(result.text);
 
-            if (this.previousResults.size() == 10) {
-                System.out.println("GAME OVER! The solution was: ");
-                break;
-            }
-        } while (!result.calculateScore());
+        } while (!result.calculateScore() && this.previousResults.size() < 10);
 
-        if (result.calculateScore()) System.out.println("Good Job! The solution is : ");
-        result.displaySolution();
+        if (result.calculateScore()) {
+            System.out.println("Good Job! The solution is : ");
+        } else {
+            System.out.println("GAME OVER! The solution was: ");
+        }
+
+        this.displaySolution();
     }
 
 

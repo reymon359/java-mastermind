@@ -15,6 +15,7 @@ public class SecretCombination extends Combination {
             colourCodeAux = colourCodeAux.substring(0, colourCodeAux.indexOf(colourCodeAux.charAt(result))) +
                     colourCodeAux.substring(colourCodeAux.indexOf(colourCodeAux.charAt(result)) + 1);
         }
+		System.out.println(secretCode);
     }
 
 }

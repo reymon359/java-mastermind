@@ -6,7 +6,7 @@ public class Result {
 
 
     public Result(String guess, String secretCode) {
-		this.dead = this.injured = 0;
+
         this.guess = guess;
         this.secretCode = secretCode;
         this.calculateScore();
@@ -14,15 +14,14 @@ public class Result {
     }
 
     public boolean calculateScore() {
+        this.dead = this.injured = 0;
         for (int i = 0; i < this.guess.length(); i++) {
             char ch = this.guess.charAt(i);
             int j = this.secretCode.indexOf(ch);
             if (i == j) this.dead++;
             if (j >= 0) injured++;
         }
-        boolean success = false;
-        if (this.dead == this.guess.length()) success = true;
-        return success;
+        return this.dead == this.guess.length();
     }
 
     public void displayResultText() {
