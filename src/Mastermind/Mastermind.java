@@ -1,7 +1,6 @@
 package Mastermind;
 
 import java.util.ArrayList;
-import java.util.Collection;
 
 public class Mastermind {
 
@@ -51,7 +50,7 @@ public class Mastermind {
 
 
 	
-	public static void main(String[] args) throws Exception {
+	public static void main(String[] args){
 		new Mastermind().game();
 	}
 }
