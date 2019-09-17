@@ -1,7 +1,7 @@
 package Mastermind;
 
 public class Result {
-    String guess, secretCode, text;
+    public String guess, secretCode, text;
     private int dead, injured;
 
 

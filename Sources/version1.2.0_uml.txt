@@ -1,0 +1,51 @@
+@startuml
+
+class Mastermind {
+  -private SecretCombination secretCombination
+  -private ProposedCombination proposedCombination
+  -ArrayList<String> previousResults
+  +public static void main()
+  +private void game()
+  +void introduction()
+  +private void displayPreviousResults()
+  +private void displaySolution()
+}
+
+class Combination {
+ -static String[] colourNames
+ -static String colourCode
+ +public int getColourIndex(char a)
+}
+
+class SecretCombination {
+ -public String secretCode
+ +public SecretCombination()
+}
+
+class ProposedCombination {
+ -String guess
+ +public ProposedCombination()
+ +public void getPlayerGuess()
+ +private String getInputLine()
+ +private String validateInput(String line)
+}
+
+class Result {
+ -public String guess
+ -public String secretCode
+ -public String text;
+ -private int dead
+ -private int injured
+ -String[] previousResults
+ +public Result(String guess, String secretCode)
+ +public boolean calculateScore()
+ +public void displayResultText()
+}
+
+Mastermind *-down- SecretCombination
+Mastermind *-down- ProposedCombination
+Mastermind *-down- Result
+Combination <|-down- SecretCombination: Inheritance
+Combination <|-down- ProposedCombination: Inheritance
+
+@enduml
