@@ -10,14 +10,14 @@ public class Mastermind {
     static ArrayList<String> previousResults = new ArrayList<String>();
 
 
-    void introduction() {
+    private void introduction() {
         String s = "Welcome to Mastermind.\n"
                 + "You can guess the secret combination 10 times.\n"
                 + "Good luck!";
         System.out.println(s);
     }
 
-    public void displayPreviousResults() {
+    private void displayPreviousResults() {
         if (this.previousResults.size() == 0) return;
 
         String s = "The previous results are: \n";
@@ -38,7 +38,7 @@ public class Mastermind {
         System.out.println(s);
     }
 
-    void game() {
+    private void game() {
         this.secretCombination = new SecretCombination();
         this.introduction();
         Result result;

@@ -39,15 +39,4 @@ public class Result {
         System.out.println(this.text);
     }
 
-    public void displaySolution() {
-        String s = "[";
-        for (int i = 0; i < 4; i++) {
-            if (i != 0) s += ", ";
-            s += Combination.colourNames[Combination.colourCode.indexOf(secretCode.charAt(i))];
-        }
-        s += "]";
-        System.out.println(s);
-    }
-
-
 }
