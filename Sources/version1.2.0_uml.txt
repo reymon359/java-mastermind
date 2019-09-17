@@ -36,7 +36,6 @@ class Result {
  -public String text;
  -private int dead
  -private int injured
- -String[] previousResults
  +public Result(String guess, String secretCode)
  +public boolean calculateScore()
  +public void displayResultText()
