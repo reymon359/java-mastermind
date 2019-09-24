@@ -12,8 +12,7 @@ public class Mastermind {
 
     private void introduction() {
         String s = "Welcome to Mastermind.\n"
-                + "You can guess the secret combination 10 times.\n"
-                + "Good luck!";
+                + "You can guess the secret combination 10 times. Good luck!";
         System.out.println(s);
     }
 

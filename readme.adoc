@@ -150,6 +150,7 @@ The structure seems better but still has some problems.
 https://github.com/reymon359/java-mastermind/tree/02282cf4fcf50acb6b5c33b8dc8955a0342ab1c7[Browse Version 1.2.0 files on Github]
 
 The game has the same functionalities as before but I have made some improvements:
+
 * there has been an update on the code to be more OOP.
 * removed death code
 * improved some methods like the SecretCombination()
