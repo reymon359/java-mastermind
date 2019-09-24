@@ -5,33 +5,22 @@ import java.util.ArrayList;
 public class Game {
 
 	private SecretCombination secretCombination;
-	private ProposedCombination proposedCombination;
+	private ProposedCombinationView proposedCombinationView;
+	private Result result;
 
-	static ArrayList<String> previousResults = new ArrayList<String>();
+	private GameView gameView;
+//	public static ArrayList<String> previousResults = new ArrayList<String>();
 
-	private void introduction() {
-		String s = "Welcome to Mastermind.\n" + "You can guess the secret combination 10 times. Good luck!";
-		System.out.println(s);
-	}
+	
 
-	private void displayPreviousResults() {
-		if (this.previousResults.size() == 0)
-			return;
-
-		String s = "The previous results are: \n";
-		for (int i = 0; i < this.previousResults.size(); i++) {
-			s += this.previousResults.get(i) + "\n";
-		}
-
-		System.out.println(s);
-	}
 
 	public void displaySolution() {
 		String s = "[";
 		for (int i = 0; i < 4; i++) {
 			if (i != 0)
 				s += ", ";
-			s += Combination.colourNames[Combination.colourCode.indexOf(this.secretCombination.secretCode.charAt(i))];
+			s += Combination.colourNames[Combination.colourCode
+					.indexOf(this.secretCombination.getSecretCombination().charAt(i))];
 		}
 		s += "]";
 		System.out.println(s);
@@ -39,15 +28,17 @@ public class Game {
 
 	public void start() {
 		this.secretCombination = new SecretCombination();
-		this.introduction();
+		this.gameView = new GameView();
+		this.gameView.introduction();
+
 		Result result;
 		do {
-			this.displayPreviousResults();
-			this.proposedCombination = new ProposedCombination();
-			result = new Result(this.proposedCombination.guess, this.secretCombination.secretCode);
-			this.previousResults.add(result.text);
+			this.gameView.starView();
+			result = new Result(
+					this.gameView.getProposedCombinationView(), this.secretCombination.getSecretCombination() );
+			this.gameView.previousResults.add(result.text);
 
-		} while (!result.calculateScore() && this.previousResults.size() < 10);
+		} while (!result.calculateScore() && this.gameView.previousResults.size() < 10);
 
 		if (result.calculateScore()) {
 			System.out.println("Good Job! The solution is : ");
@@ -57,7 +48,5 @@ public class Game {
 
 		this.displaySolution();
 	}
-
-	
 
 }

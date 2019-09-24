@@ -11,7 +11,8 @@ public class Mastermind {
 	}
 	
 	public static void main(String[] args) {
-		new Mastermind(new Game(), new GameView());
+		new Mastermind(new Game(), new GameView()).play();
+		
 	}
 	
 	public void play() {

@@ -9,7 +9,7 @@ public class Result {
         this.guess = guess;
         this.secretCode = secretCode;
         this.calculateScore();
-       new ResultView(this).displayResultText();
+       this.displayResult();
     }
 
     public boolean calculateScore() {
@@ -22,7 +22,22 @@ public class Result {
         }
         return this.dead == this.guess.length();
     }
+    
+    public void displayResult() {
+		String s = "";
 
+		this.text = "Guess " + (GameView.previousResults.size() + 1) + " : [";
+		for (int i = 0; i < this.guess.length(); i++) {
+			if (i != 0)
+				this.text += ", ";
+			int j = Combination.colourCode.indexOf(this.guess.charAt(i));
+			this.text += Combination.colourNames[j];
+		}
+		this.text += "] ";
+
+		this.text += "Injureds: " + this.injured + ", deads: " + this.dead;
+		System.out.println(this.text);
+	}
 
 
 }
