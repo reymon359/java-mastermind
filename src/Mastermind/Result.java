@@ -9,7 +9,7 @@ public class Result {
         this.guess = guess;
         this.secretCode = secretCode;
         this.calculateScore();
-       this.displayResult();
+        this.displayResult();
     }
 
     public boolean calculateScore() {
@@ -38,6 +38,10 @@ public class Result {
 		this.text += "Injureds: " + this.injured + ", deads: " + this.dead;
 		System.out.println(this.text);
 	}
+    
+    public String getResult() {
+    	return this.text;
+    }
 
 
 }

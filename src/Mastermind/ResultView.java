@@ -6,7 +6,6 @@ public class ResultView {
 
 	public ResultView(Result result) {
 		this.result = result;
-
 	}
 
 	

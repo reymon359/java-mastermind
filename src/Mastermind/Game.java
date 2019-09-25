@@ -9,34 +9,30 @@ public class Game {
 	private Result result;
 
 	private GameView gameView;
-//	public static ArrayList<String> previousResults = new ArrayList<String>();
+	private static ArrayList<String> Results;
 
-	
-
-
-	public void displaySolution() {
-		String s = "[";
-		for (int i = 0; i < 4; i++) {
-			if (i != 0)
-				s += ", ";
-			s += Combination.colourNames[Combination.colourCode
-					.indexOf(this.secretCombination.getSecretCombination().charAt(i))];
-		}
-		s += "]";
-		System.out.println(s);
+	public Game() {
+		this.secretCombination = new SecretCombination();
+		this.Results = new ArrayList<String>();
 	}
 
+	public void addResult(Result result) {
+		this.Results.add(result.getResult());
+	}
+
+
 	public void start() {
-		this.secretCombination = new SecretCombination();
 		this.gameView = new GameView();
 		this.gameView.introduction();
 
 		Result result;
 		do {
-			this.gameView.starView();
+			this.gameView.displayPreviousResults(this.Results);
+			
 			result = new Result(
 					this.gameView.getProposedCombinationView(), this.secretCombination.getSecretCombination() );
-			this.gameView.previousResults.add(result.text);
+			this.addResult(result);
+			
 
 		} while (!result.calculateScore() && this.gameView.previousResults.size() < 10);
 
@@ -46,7 +42,7 @@ public class Game {
 			System.out.println("GAME OVER! The solution was: ");
 		}
 
-		this.displaySolution();
+		this.gameView.displaySolution();
 	}
 
 }
