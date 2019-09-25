@@ -7,39 +7,38 @@ public class Game {
 	private SecretCombination secretCombination;
 	private ProposedCombination proposedCombination;
 	private Result result;
-
-//	private GameView gameView;
-	private ArrayList<String> results;
+	private ArrayList<String> resultTexts;
 
 	public Game() {
 		this.secretCombination = new SecretCombination();
-		this.results = new ArrayList<String>();
+		this.resultTexts = new ArrayList<String>();
 	}
 
-	public void addResult(Result result) {
-		this.results.add(result.getResult());
+	public void addResultText(String resultText) {
+		this.resultTexts.add(resultText);
 	}
 
 	public void play() {
-//		Result result;
 		do {
 			this.proposedCombination = new ProposedCombination();
 			this.result = new Result(this.proposedCombination.getPlayerGuess(), this.secretCombination.getSecretCode());
-			this.addResult(this.result);
-			GameView.displayResults(this.results);
-			
-		} while (!this.result.calculateScore() && this.results.size() < 10);
+			this.result.displayResultText();
+			System.out.println("this.result.getResultText() "+this.result.getResultText());
+			this.addResultText(this.result.getResultText());
+			GameView.displayResultsTexts(this.resultTexts);
+
+		} while (!this.result.checkWin() && this.resultTexts.size() < 10);
 
 	}
 
-	public void checkWin() {
-		if (this.result.calculateScore()) {
+	public void endGame() {
+		if (this.result.checkWin()) {
 			System.out.println("Good Job! The solution is : ");
 		} else {
 			System.out.println("GAME OVER! The solution was: ");
 		}
 	}
-	
+
 	public SecretCombination getSecretCombination() {
 		return this.secretCombination;
 	}

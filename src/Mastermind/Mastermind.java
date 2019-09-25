@@ -22,10 +22,10 @@ public class Mastermind {
 	}
 
 	public void end() {
-		this.game.checkWin();
+		this.game.endGame();
 		this.gameView.displaySolution(this.game.getSecretCombination().getSecretCode());
-		// TODO this.game.replay() 
+		// TODO this.game.replay()
 		System.exit(0);
 	}
-	
+
 }

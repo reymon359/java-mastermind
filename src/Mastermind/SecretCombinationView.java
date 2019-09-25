@@ -1,6 +1,6 @@
 package Mastermind;
 
-public class SecretCombinationView extends Combination {
+public class SecretCombinationView {
 
 	public SecretCombinationView() {
 	}
