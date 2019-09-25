@@ -15,7 +15,7 @@ Game based on the https://en.wikipedia.org/wiki/Mastermind_(board_game)[Mastermi
 == Versions
 What have been done in each version of the game.
 
-=== Version 1.0.0
+=== Version 1.0.0 Like a potatoe but worse 
 
 https://github.com/reymon359/java-mastermind/tree/b494c53a5fe2764c3e48ff4015abbed73c2952fa[Browse Version 1.0.0 files on Github]
 
@@ -61,7 +61,7 @@ Although the game is playable and you can complete a match there are some things
 * The game does not show the precious combinations in the window, it just shows the last combination.
 * There should be some kind of replayability
 
-=== Version 1.1.0
+=== Version 1.1.0 So cute so bad
 
 
 https://github.com/reymon359/java-mastermind/tree/bc825e98d636bbc35f7ea0e1ad717a3b445fdaad[Browse Version 1.1.0 files on Github]
@@ -145,7 +145,7 @@ The structure seems better but still has some problems.
 * The structure could be done much better.
 
 
-=== Version 1.2.0
+=== Version 1.2.0 mmmmmkay
 
 https://github.com/reymon359/java-mastermind/tree/02282cf4fcf50acb6b5c33b8dc8955a0342ab1c7[Browse Version 1.2.0 files on Github]
 
@@ -173,3 +173,103 @@ I was not doing some things the right way:
 * Before this version Mastermind was not creating objects from the classes but calling their static methods which was wrong.
 * The game still lacks replayability.
 * I still think the structure can be done better
+
+
+=== Version 1.3.0 Models and Views (trying at least)
+
+
+There has been a major change on the structure. I have tried to divide the project between models and Views.
+
+* Added the Encrypted combination to the console ****
+*Console output:*
+
+----
+Welcome to Mastermind.
+You can guess the secret combination 10 times. Good luck!
+Colour Code : rbygop
+****
+Enter your guess : rbgy
+[red, blue, green, yellow] Injureds: 4, deads: 2
+this.result.getResultText() [red, blue, green, yellow] Injureds: 4, deads: 2
+Attempts: 1
+The previous results are: 
+[red, blue, green, yellow] Injureds: 4, deads: 2
+
+Colour Code : rbygop
+****
+Enter your guess : rrrr
+[red, red, red, red] Injureds: 4, deads: 1
+this.result.getResultText() [red, red, red, red] Injureds: 4, deads: 1
+Attempts: 2
+The previous results are: 
+[red, blue, green, yellow] Injureds: 4, deads: 2
+[red, red, red, red] Injureds: 4, deads: 1
+
+.
+.
+.
+.
+
+
+
+Colour Code : rbygop
+****
+Enter your guess : ryyy
+[red, yellow, yellow, yellow] Injureds: 4, deads: 2
+this.result.getResultText() [red, yellow, yellow, yellow] Injureds: 4, deads: 2
+Attempts: 9
+The previous results are: 
+[red, blue, green, yellow] Injureds: 4, deads: 2
+[red, red, red, red] Injureds: 4, deads: 1
+[green, green, green, green] Injureds: 4, deads: 1
+[red, yellow, blue, green] Injureds: 4, deads: 2
+[red, yellow, blue, green] Injureds: 4, deads: 2
+[green, yellow, blue, yellow] Injureds: 4, deads: 2
+[red, green, red, red] Injureds: 4, deads: 2
+[red, green, red, blue] Injureds: 4, deads: 2
+[red, yellow, yellow, yellow] Injureds: 4, deads: 2
+
+Colour Code : rbygop
+****
+Enter your guess : gggg
+[green, green, green, green] Injureds: 4, deads: 1
+this.result.getResultText() [green, green, green, green] Injureds: 4, deads: 1
+Attempts: 10
+The previous results are: 
+[red, blue, green, yellow] Injureds: 4, deads: 2
+[red, red, red, red] Injureds: 4, deads: 1
+[green, green, green, green] Injureds: 4, deads: 1
+[red, yellow, blue, green] Injureds: 4, deads: 2
+[red, yellow, blue, green] Injureds: 4, deads: 2
+[green, yellow, blue, yellow] Injureds: 4, deads: 2
+[red, green, red, red] Injureds: 4, deads: 2
+[red, green, red, blue] Injureds: 4, deads: 2
+[red, yellow, yellow, yellow] Injureds: 4, deads: 2
+[green, green, green, green] Injureds: 4, deads: 1
+
+GAME OVER! The solution was: 
+[red, green, blue, yellow]
+
+----
+
+
+
+*Structure*
+
+At first I made a new base diagram with the stuff I had and tried to rebuild everything taking it as the base.
+
+.Version 1.3.0 Structure
+image::./Sources/version1.3.0.png[Class diagram Version 1.3.0]
+
+But in the end it did not went as planned (like everything).
+
+.Version 1.3.1 Structure
+image::./Sources/version1.3.1.png[Class diagram Version 1.3.1]
+
+*About this version*
+
+This was by far the hardest version change from all:
+
+* The game still lacks replayability.
+* the next step to improve it will be to add controllers to it to separate the views from the models even more.
+

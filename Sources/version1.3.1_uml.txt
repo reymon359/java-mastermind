@@ -5,15 +5,27 @@ class Mastermind {
  -private Gameview gameView
  +public Mastermind(Game game, GameView gameView)
  +public static void main(String[] args)
- +public void play()
+ +public void start()
+ +public void end()
 }
 
 class Game {
  -private SecretCombination secretCombination
  -private ProposedCombination proposedCombination
  -private Result result
- +static ArrayList<String> previousResults
+ -private ArrayList<String> previousResults
  +public Game()
+ +public void addResultText(String resultText)
+ +public void play()
+ +public void endGame()
+ +public SecretCombination getSecretCombination()
+}
+
+class GameView {
+ +public GameView()
+ +public void introduction()
+ +static void displayResultsTexts(ArrayList<String> results)
+ +public void displaySolution(String secretCode)
 }
 
 class Combination {
@@ -27,10 +39,21 @@ class SecretCombination {
  +public String SecretCombination()
 }
 
+class SecretCombinationView {
+ +public SecretCombinationView()
+ +static void displayEncriptedCombination()
+}
+
 class ProposedCombination {
  -String guess
  +public ProposedCombination()
- +public void getPlayerGuess()
+ +public String getPlayerGuess()
+}
+
+class ProposedCombinationView {
+ -String input;
+ +public ProposedCombinationView()
+ +public String getPlayerInput()
  +private String getInputLine()
  +private String validateInput(String line)
 }
@@ -42,30 +65,13 @@ class Result {
  -private int dead
  -private int injured
  +public Result(String guess, String secretCode)
- +public boolean calculateScore()
+ +public void calculateResult()
+ +public boolean checkWin()
+ +public void createResultText()
+ +public String getResultText()
  +public void displayResultText()
 }
 
-class GameView {
- +public GameView()
-}
-
-
-class CombinationView {
- +public CombinationView()
-}
-
-class SecretCombinationView {
- +public SecretCombinationView()
-}
-
-class ProposedCombinationView {
- +public ProposedCombinationView()
-}
-
-class ResultView {
- +public ResultView()
-}
 
 Mastermind *-down- Game
 Game *-down- SecretCombination
@@ -75,11 +81,9 @@ Combination <|-down- SecretCombination: Inheritance
 Combination <|-down- ProposedCombination: Inheritance
 
 Mastermind *-down- GameView
-GameView *-down- SecretCombinationView
-GameView *-down- ProposedCombinationView
-GameView *-down- ResultView
-CombinationView <|-down- SecretCombinationView: Inheritance
-CombinationView <|-down- ProposedCombinationView: Inheritance
+ProposedCombinationView *-down- SecretCombinationView
+ProposedCombination *-down- ProposedCombinationView
+Combination <|-down- ProposedCombinationView: Inheritance
 
 
 @enduml
