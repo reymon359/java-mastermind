@@ -11,27 +11,29 @@ public class GameView {
 	public static ArrayList<String> previousResults = new ArrayList<String>();
 
 	public GameView() {
-		this.proposedCombinationView = new ProposedCombinationView();
 	}
 
 	public void introduction() {
 		System.out.println("Welcome to Mastermind.\n" + "You can guess the secret combination 10 times. Good luck!");
 	}
 
-	public void displayPreviousResults(ArrayList<String> results) {
-		String s = "The previous results are: \n";
+	static void displayResults(ArrayList<String> results) {
+		String s = "Attempts: " + results.size() 
+				+ "\nThe previous results are: \n";
 		for (int i = 0; i < results.size(); i++) {
 			s += results.get(i) + "\n";
 		}
-
 		System.out.println(s);
 	}
 
-	public String getProposedCombinationView() {
-		return this.proposedCombinationView.getPlayerGuess();
-	}
-
-	public void displaySolution() {
-		this.secretCombinationView.displaySecretCombination();
+	public void displaySolution(String secretCode) {
+		String s = "[";
+		for (int i = 0; i < 4; i++) {
+			if (i != 0)
+				s += ", ";
+			s += Combination.colourNames[Combination.colourCode.indexOf(secretCode.charAt(i))];
+		}
+		s += "]";
+		System.out.println(s);
 	}
 }

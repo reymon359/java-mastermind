@@ -1,13 +1,14 @@
 package Mastermind;
 
 public class ProposedCombinationView extends Combination {
-	String guess;
+	String input;
 
 	public ProposedCombinationView() {
 		boolean inputDone = false;
 		String line = "";
 		while (!inputDone) {
 			System.out.println("Colour Code : " + colourCode);
+			SecretCombinationView.displayEncriptedCombination();
 			System.out.print("Enter your guess : ");
 			line = getInputLine();
 			String error = validateInput(line);
@@ -16,11 +17,11 @@ public class ProposedCombinationView extends Combination {
 			else
 				System.out.println(error);
 		}
-		this.guess = line.toLowerCase();
+		this.input = line.toLowerCase();
 	}
 
-	public String getPlayerGuess() {
-		return this.guess;
+	public String getPlayerInput() {
+		return this.input;
 	}
 
 	private String getInputLine() {

@@ -17,7 +17,7 @@ public class SecretCombination extends Combination {
 		}
 	}
 
-	public String getSecretCombination() {
+	public String getSecretCode() {
 		return this.secretCode;
 	}
 	

@@ -24,9 +24,7 @@ public class Result {
     }
     
     public void displayResult() {
-		String s = "";
-
-		this.text = "Guess " + (GameView.previousResults.size() + 1) + " : [";
+		this.text = "[";
 		for (int i = 0; i < this.guess.length(); i++) {
 			if (i != 0)
 				this.text += ", ";

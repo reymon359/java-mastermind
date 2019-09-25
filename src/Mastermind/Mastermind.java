@@ -9,13 +9,23 @@ public class Mastermind {
 		this.game = game;
 		this.gameView = gameView;
 	}
-	
+
 	public static void main(String[] args) {
-		new Mastermind(new Game(), new GameView()).play();
-		
+		new Mastermind(new Game(), new GameView()).start();
+
+	}
+
+	public void start() {
+		this.gameView.introduction();
+		this.game.play();
+		this.end();
+	}
+
+	public void end() {
+		this.game.checkWin();
+		this.gameView.displaySolution(this.game.getSecretCombination().getSecretCode());
+		// TODO this.game.replay() 
+		System.exit(0);
 	}
 	
-	public void play() {
-		this.game.start();
-	}
 }

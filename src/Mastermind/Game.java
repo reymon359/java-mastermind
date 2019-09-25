@@ -5,44 +5,43 @@ import java.util.ArrayList;
 public class Game {
 
 	private SecretCombination secretCombination;
-	private ProposedCombinationView proposedCombinationView;
+	private ProposedCombination proposedCombination;
 	private Result result;
 
-	private GameView gameView;
-	private static ArrayList<String> Results;
+//	private GameView gameView;
+	private ArrayList<String> results;
 
 	public Game() {
 		this.secretCombination = new SecretCombination();
-		this.Results = new ArrayList<String>();
+		this.results = new ArrayList<String>();
 	}
 
 	public void addResult(Result result) {
-		this.Results.add(result.getResult());
+		this.results.add(result.getResult());
 	}
 
-
-	public void start() {
-		this.gameView = new GameView();
-		this.gameView.introduction();
-
-		Result result;
+	public void play() {
+//		Result result;
 		do {
-			this.gameView.displayPreviousResults(this.Results);
+			this.proposedCombination = new ProposedCombination();
+			this.result = new Result(this.proposedCombination.getPlayerGuess(), this.secretCombination.getSecretCode());
+			this.addResult(this.result);
+			GameView.displayResults(this.results);
 			
-			result = new Result(
-					this.gameView.getProposedCombinationView(), this.secretCombination.getSecretCombination() );
-			this.addResult(result);
-			
+		} while (!this.result.calculateScore() && this.results.size() < 10);
 
-		} while (!result.calculateScore() && this.gameView.previousResults.size() < 10);
+	}
 
-		if (result.calculateScore()) {
+	public void checkWin() {
+		if (this.result.calculateScore()) {
 			System.out.println("Good Job! The solution is : ");
 		} else {
 			System.out.println("GAME OVER! The solution was: ");
 		}
-
-		this.gameView.displaySolution();
+	}
+	
+	public SecretCombination getSecretCombination() {
+		return this.secretCombination;
 	}
 
 }
