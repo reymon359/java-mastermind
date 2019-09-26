@@ -177,6 +177,8 @@ I was not doing some things the right way:
 
 === Version 1.3.0 Models and Views (trying at least)
 
+https://github.com/reymon359/java-mastermind/tree/875399fc839efb9d356aa3857761b6343823860d[Browse Version 1.3.0 files on Github]
+
 
 There has been a major change on the structure. I have tried to divide the project between models and Views.
 
