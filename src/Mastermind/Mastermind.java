@@ -24,7 +24,7 @@ public class Mastermind {
 	public void end() {
 		this.game.endGame();
 		this.gameView.displaySolution(this.game.getSecretCombination().getSecretCode());
-		// TODO this.game.replay()
+		this.gameView.playAgain();
 		System.exit(0);
 	}
 

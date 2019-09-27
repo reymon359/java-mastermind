@@ -192,7 +192,7 @@ Colour Code : rbygop
 ****
 Enter your guess : rbgy
 [red, blue, green, yellow] Injureds: 4, deads: 2
-this.result.getResultText() [red, blue, green, yellow] Injureds: 4, deads: 2
+[red, blue, green, yellow] Injureds: 4, deads: 2
 Attempts: 1
 The previous results are: 
 [red, blue, green, yellow] Injureds: 4, deads: 2
@@ -201,7 +201,7 @@ Colour Code : rbygop
 ****
 Enter your guess : rrrr
 [red, red, red, red] Injureds: 4, deads: 1
-this.result.getResultText() [red, red, red, red] Injureds: 4, deads: 1
+[red, red, red, red] Injureds: 4, deads: 1
 Attempts: 2
 The previous results are: 
 [red, blue, green, yellow] Injureds: 4, deads: 2
@@ -218,7 +218,7 @@ Colour Code : rbygop
 ****
 Enter your guess : ryyy
 [red, yellow, yellow, yellow] Injureds: 4, deads: 2
-this.result.getResultText() [red, yellow, yellow, yellow] Injureds: 4, deads: 2
+[red, yellow, yellow, yellow] Injureds: 4, deads: 2
 Attempts: 9
 The previous results are: 
 [red, blue, green, yellow] Injureds: 4, deads: 2
@@ -235,7 +235,7 @@ Colour Code : rbygop
 ****
 Enter your guess : gggg
 [green, green, green, green] Injureds: 4, deads: 1
-this.result.getResultText() [green, green, green, green] Injureds: 4, deads: 1
+[green, green, green, green] Injureds: 4, deads: 1
 Attempts: 10
 The previous results are: 
 [red, blue, green, yellow] Injureds: 4, deads: 2

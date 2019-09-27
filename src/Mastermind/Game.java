@@ -23,7 +23,6 @@ public class Game {
 			this.proposedCombination = new ProposedCombination();
 			this.result = new Result(this.proposedCombination.getPlayerGuess(), this.secretCombination.getSecretCode());
 			this.result.displayResultText();
-			System.out.println("this.result.getResultText() "+this.result.getResultText());
 			this.addResultText(this.result.getResultText());
 			GameView.displayResultsTexts(this.resultTexts);
 

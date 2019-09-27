@@ -29,4 +29,8 @@ public class GameView {
 		s += "]";
 		System.out.println(s);
 	}
+	
+	public void playAgain() {
+		
+	}
 }
