@@ -1,5 +1,6 @@
 package Mastermind;
 
+import java.io.IOException;
 //import java.io.IOException;
 import java.util.ArrayList;
 
@@ -31,27 +32,25 @@ public class GameView {
 		System.out.println(s);
 	}
 
-	public boolean playAgain()  {
+	public boolean playAgain() {
 		Boolean replay;
-		char c ;
+		String line = null;
+		System.out.println("Want to play again? Enter Y (yes) or N (no)");
 		do {
-			System.out.println("Want to play again? Enter Y (yes) or N (no)");
-//			String line = null;
-			
+
 			try {
-//				line = new java.io.BufferedReader(new java.io.InputStreamReader(System.in)).readLine();
-				c = (char) System.in.read();
-			} catch (Exception e) {
-				return false;
+				line = new java.io.BufferedReader(new java.io.InputStreamReader(System.in)).readLine();
+			} catch (IOException e) {
+				e.printStackTrace();
 			}
-			System.out.println(c);
-//			line = line.charAt(0);
-			System.out.println(c == 'y');
-			replay = c == 'y' || c == 'Y' || c == 'n' || c == 'N';
-			System.out.println(replay);
+
+			replay = line.charAt(0) == 'y' || line.charAt(0) == 'Y' 
+					|| line.charAt(0) == 'n' || line.charAt(0) == 'N';
+			if (!replay)
+				System.out.println("Valid characters: Y, y, N, n");
 		} while (!replay);
 
-		return c == 'y' || c == 'Y';
+		return line.charAt(0) == 'y' || line.charAt(0) == 'Y';
 	}
 
 }

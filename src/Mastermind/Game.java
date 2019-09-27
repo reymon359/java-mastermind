@@ -26,7 +26,7 @@ public class Game {
 			this.addResultText(this.result.getResultText());
 			GameView.displayResultsTexts(this.resultTexts);
 
-		} while (!this.result.checkWin() && this.resultTexts.size() < 2);
+		} while (!this.result.checkWin() && this.resultTexts.size() < 10);
 
 	}
 
