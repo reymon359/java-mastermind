@@ -1,5 +1,6 @@
 package Mastermind;
 
+//import java.io.IOException;
 import java.util.ArrayList;
 
 public class GameView {
@@ -29,8 +30,28 @@ public class GameView {
 		s += "]";
 		System.out.println(s);
 	}
-	
-	public void playAgain() {
-		
+
+	public boolean playAgain()  {
+		Boolean replay;
+		char c ;
+		do {
+			System.out.println("Want to play again? Enter Y (yes) or N (no)");
+//			String line = null;
+			
+			try {
+//				line = new java.io.BufferedReader(new java.io.InputStreamReader(System.in)).readLine();
+				c = (char) System.in.read();
+			} catch (Exception e) {
+				return false;
+			}
+			System.out.println(c);
+//			line = line.charAt(0);
+			System.out.println(c == 'y');
+			replay = c == 'y' || c == 'Y' || c == 'n' || c == 'N';
+			System.out.println(replay);
+		} while (!replay);
+
+		return c == 'y' || c == 'Y';
 	}
+
 }

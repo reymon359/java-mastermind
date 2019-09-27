@@ -12,7 +12,6 @@ public class Mastermind {
 
 	public static void main(String[] args) {
 		new Mastermind(new Game(), new GameView()).start();
-
 	}
 
 	public void start() {
@@ -24,8 +23,12 @@ public class Mastermind {
 	public void end() {
 		this.game.endGame();
 		this.gameView.displaySolution(this.game.getSecretCombination().getSecretCode());
-		this.gameView.playAgain();
-		System.exit(0);
+		if (this.gameView.playAgain()) {
+			new Mastermind(new Game(), new GameView()).start();
+		} else {
+			System.out.println("See you soon!");
+			System.exit(0);
+		}
 	}
 
 }

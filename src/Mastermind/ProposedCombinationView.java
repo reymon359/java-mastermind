@@ -3,23 +3,6 @@ package Mastermind;
 public class ProposedCombinationView extends Combination {
 	String input;
 
-//	public ProposedCombinationView() {
-//		boolean inputDone = false;
-//		String line = "";
-//		while (!inputDone) {
-//			System.out.println("Colour Code : " + colourCode);
-//			SecretCombinationView.displayEncriptedCombination();
-//			System.out.print("Enter your guess : ");
-//			line = getInputLine();
-//			String error = validateInput(line);
-//			if (error.equals("OK"))
-//				inputDone = true;
-//			else
-//				System.out.println(error);
-//		}
-//		this.input = line.toLowerCase();
-//	}
-
 	public ProposedCombinationView() {
 		String line = "";
 		String error;
