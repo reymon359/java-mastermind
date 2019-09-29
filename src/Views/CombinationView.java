@@ -1,4 +1,4 @@
-package Mastermind;
+package Views;
 
 public class CombinationView {
 	static String[] colourNames = { "red", "blue", "yellow", "green", "orange", "purple" };

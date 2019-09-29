@@ -1,4 +1,7 @@
-package Mastermind;
+package Views;
+
+import Views.SecretCombinationView;
+import Models.Combination;
 
 public class ProposedCombinationView extends Combination {
 	String input;

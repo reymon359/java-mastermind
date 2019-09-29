@@ -1,11 +1,11 @@
-package Mastermind;
+package Views;
 
 public class SecretCombinationView {
 
 	public SecretCombinationView() {
 	}
 
-	static void displayEncriptedCombination() {
+	public static void displayEncriptedCombination() {
 		System.out.println("****");
 	}
 }
