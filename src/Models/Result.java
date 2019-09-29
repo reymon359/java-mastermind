@@ -1,4 +1,5 @@
-package Mastermind;
+package Models;
+
 
 public class Result {
 	public String guess, secretCode, text;

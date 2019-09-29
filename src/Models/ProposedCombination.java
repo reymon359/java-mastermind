@@ -1,4 +1,7 @@
-package Mastermind;
+package Models;
+
+import Models.Combination;
+import Views.ProposedCombinationView;
 
 public class ProposedCombination extends Combination {
 	private String guess;

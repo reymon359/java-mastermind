@@ -1,5 +1,6 @@
-package Mastermind;
+package Models;
 
+import Views.GameView;
 import java.util.ArrayList;
 
 public class Game {
