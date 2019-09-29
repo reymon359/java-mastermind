@@ -22,7 +22,7 @@ public class Mastermind {
 		if (this.controller.restart()) {
 			new Mastermind(new Game(), new GameView());
 		}
-	}
+}
 
 	public static void main(String[] args) {
 		new Mastermind(new Game(), new GameView());

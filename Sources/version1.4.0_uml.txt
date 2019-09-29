@@ -1,0 +1,126 @@
+@startuml
+
+class Mastermind { 
+    -private Game game
+    -private Gameview gameView
+    -private StartController startController
+    -private ContinueController continueController
+    -private EndController endController
+    +public Mastermind(Game game, GameView gameView)
+    +public static void main(String[] args)
+}
+
+class Controller {
+    -private Game game;
+	-private GameView gameView
+	+public Controller(Game game, GameView gameView)
+	+public boolean restart()
+}
+
+class StartController {
+	+public StartController(Game game, GameView gameView)
+}
+
+
+class ContinueController {
+	+public ContinueController(Game game, GameView gameView)
+}
+
+
+class EndController {
+	+public EndController(Game game, GameView gameView)
+}
+
+class Game {
+ -private SecretCombination secretCombination
+ -private ProposedCombination proposedCombination
+ -private Result result
+ -private ArrayList<String> previousResults
+ +public Game()
+ +public void addResultText(String resultText)
+ +public void play()
+ +public void endGame()
+ +public SecretCombination getSecretCombination()
+}
+
+class GameView {
+ +public GameView()
+ +public void introduction()
+ +static void displayResultsTexts(ArrayList<String> results)
+ +public void displaySolution(String secretCode)
+}
+
+class Combination {
+ -static String[] colourNames
+ -static String colourCode
+ +public int getColourIndex(char a)
+}
+
+class SecretCombination {
+ -private String secretCombination
+ +public String SecretCombination()
+}
+
+class SecretCombinationView {
+ +public SecretCombinationView()
+ +static void displayEncriptedCombination()
+}
+
+class ProposedCombination {
+ -String guess
+ +public ProposedCombination()
+ +public String getPlayerGuess()
+}
+
+class ProposedCombinationView {
+ -String input;
+ +public ProposedCombinationView()
+ +public String getPlayerInput()
+ +private String getInputLine()
+ +private String validateInput(String line)
+}
+
+class Result {
+ -public String guess
+ -public String secretCode
+ -public String text;
+ -private int dead
+ -private int injured
+ +public Result(String guess, String secretCode)
+ +public void calculateResult()
+ +public boolean checkWin()
+ +public void createResultText()
+ +public String getResultText()
+ +public void displayResultText()
+}
+
+
+Mastermind *-down- Controller
+Mastermind *-down- StartController
+Mastermind *-down- ContinueController
+Mastermind *-down- EndController
+
+Controller *-down- Game
+Controller *-down- GameView
+Controller <|-down- StartController: Inheritance
+Controller <|-down- ContinueController: Inheritance
+Controller <|-down- EndController: Inheritance
+
+StartController <.. GameView
+ContinueController <.. Game
+EndController <.. Game
+EndController <.. GameView
+
+
+Game *-down- SecretCombination
+Game *-down- ProposedCombination
+Game *-down- Result
+Combination <|-down- SecretCombination: Inheritance
+Combination <|-down- ProposedCombination: Inheritance
+
+ProposedCombinationView *-down- SecretCombinationView
+ProposedCombination *-down- ProposedCombinationView
+Combination <|-down- ProposedCombinationView: Inheritance
+
+
+@enduml

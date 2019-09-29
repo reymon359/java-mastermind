@@ -5,7 +5,7 @@ public class SecretCombinationView {
 	public SecretCombinationView() {
 	}
 
-	public static void displayEncriptedCombination() {
+	static void displayEncriptedCombination() {
 		System.out.println("****");
 	}
 }

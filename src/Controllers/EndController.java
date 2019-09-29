@@ -9,6 +9,7 @@ public class EndController extends Controller {
 		super(game, gameView);
 		game.endGame();
 		gameView.displaySolution(game.getSecretCombination().getSecretCode());
+		
 	}
 
 }
