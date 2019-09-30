@@ -22,7 +22,7 @@ public class Game {
 	public void play() {
 		do {
 			this.proposedCombination = new ProposedCombination();
-			this.result = new Result(this.proposedCombination.getPlayerGuess(), this.secretCombination.getSecretCode());
+			this.result = new Result(this.proposedCombination.getPlayerGuess(), this.getSecretCombination().getSecretCode());
 			this.result.displayResultText();
 			this.addResultText(this.result.getResultText());
 			GameView.displayResultsTexts(this.resultTexts);
@@ -40,7 +40,8 @@ public class Game {
 	}
 
 	public SecretCombination getSecretCombination() {
-		return this.secretCombination;
+		return secretCombination;
 	}
+
 
 }

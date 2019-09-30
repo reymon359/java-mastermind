@@ -15,7 +15,7 @@ Game based on the https://en.wikipedia.org/wiki/Mastermind_(board_game)[Mastermi
 == Versions
 What have been done in each version of the game.
 
-=== Version 1.0.0 Like a potatoe but worse 
+=== Version 1.0.0 
 
 https://github.com/reymon359/java-mastermind/tree/b494c53a5fe2764c3e48ff4015abbed73c2952fa[Browse Version 1.0.0 files on Github]
 
@@ -33,7 +33,9 @@ Must enter 4 letters
 Colour Code : rbygop
 Enter your guess : abab
 Invalid Colour
-...
+.
+.
+.
 Colour Code : rbygop
 Enter your guess : oprb
 Guess: [orange, purple, red, blue] injured is 3   dead is 3
@@ -61,7 +63,7 @@ Although the game is playable and you can complete a match there are some things
 * The game does not show the precious combinations in the window, it just shows the last combination.
 * There should be some kind of replayability
 
-=== Version 1.1.0 So cute so bad
+=== Version 1.1.0 
 
 
 https://github.com/reymon359/java-mastermind/tree/bc825e98d636bbc35f7ea0e1ad717a3b445fdaad[Browse Version 1.1.0 files on Github]
@@ -145,7 +147,7 @@ The structure seems better but still has some problems.
 * The structure could be done much better.
 
 
-=== Version 1.2.0 mmmmmkay
+=== Version 1.2.0 
 
 https://github.com/reymon359/java-mastermind/tree/02282cf4fcf50acb6b5c33b8dc8955a0342ab1c7[Browse Version 1.2.0 files on Github]
 
@@ -175,7 +177,7 @@ I was not doing some things the right way:
 * I still think the structure can be done better
 
 
-=== Version 1.3.0 Models and Views (trying at least)
+=== Version 1.3.0 MV Model View
 
 https://github.com/reymon359/java-mastermind/tree/875399fc839efb9d356aa3857761b6343823860d[Browse Version 1.3.0 files on Github]
 
@@ -206,14 +208,10 @@ Attempts: 2
 The previous results are: 
 [red, blue, green, yellow] Injureds: 4, deads: 2
 [red, red, red, red] Injureds: 4, deads: 1
-
 .
 .
 .
 .
-
-
-
 Colour Code : rbygop
 ****
 Enter your guess : ryyy
@@ -254,8 +252,6 @@ GAME OVER! The solution was:
 
 ----
 
-
-
 *Structure*
 
 At first I made a new base diagram with the stuff I had and tried to rebuild everything taking it as the base.
@@ -274,4 +270,68 @@ This was by far the hardest version change from all:
 
 * The game still lacks replayability.
 * the next step to improve it will be to add controllers to it to separate the views from the models even more.
+
+
+=== Version 1.4.0 MVC Model View Controller 
+
+//https://github.com/reymon359/java-mastermind/tree/875399fc839efb9d356aa3857761b6343823860d[Browse Version 1.3.0 files on Github]
+
+Controllers have been added. I have divided the project in 3 directories: Models, Views and Controllers.
+I have also added the replay function and when the game ends it asks the player if he/she wants to play again.
+
+*Console output:*
+
+----
+Welcome to Mastermind.
+You can guess the secret combination 10 times. Good luck!
+Colour Code : rbygop
+****
+Enter your guess : rbgy
+[red, blue, green, yellow] Injureds: 4, deads: 2
+[red, blue, green, yellow] Injureds: 4, deads: 2
+Attempts: 1
+The previous results are: 
+[red, blue, green, yellow] Injureds: 4, deads: 2
+
+.
+.
+.
+.
+
+GAME OVER! The solution was: 
+[yellow, green, blue, red]
+Want to play again? Enter Y (yes) or N (no)
+hh
+Valid characters: Y, y, N, n
+b
+Valid characters: Y, y, N, n
+n
+See you soon!
+----
+
+In case the player wants to play again
+
+----
+GAME OVER! The solution was: 
+[orange, red, purple, green]
+Want to play again? Enter Y (yes) or N (no)
+Y
+Welcome to Mastermind.
+You can guess the secret combination 10 times. Good luck!
+Colour Code : rbygop
+****
+Enter your guess : 
+----
+
+*Structure*
+
+this is the new diagram with the controllers added.
+
+.Version 1.4.0 Structure
+image::./Sources/version1.4.0.png[Class diagram Version 1.4.0]
+
+*About this version*
+
+I do not fully like how the controllers are and will try to improve them in a new version.
+
 
