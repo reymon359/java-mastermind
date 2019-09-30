@@ -274,7 +274,7 @@ This was by far the hardest version change from all:
 
 === Version 1.4.0 MVC Model View Controller 
 
-//https://github.com/reymon359/java-mastermind/tree/875399fc839efb9d356aa3857761b6343823860d[Browse Version 1.3.0 files on Github]
+https://github.com/reymon359/java-mastermind/tree/9bfa571996452e548fd6554808bc422861783d53[Browse Version 1.4.0 files on Github]
 
 Controllers have been added. I have divided the project in 3 directories: Models, Views and Controllers.
 I have also added the replay function and when the game ends it asks the player if he/she wants to play again.
