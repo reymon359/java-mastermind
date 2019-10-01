@@ -5,12 +5,12 @@ Game based on the https://en.wikipedia.org/wiki/Mastermind_(board_game)[Mastermi
 
 == Rules
 
-* A player chooses 4 colours (more in a future. Maybe)
-* Colours: r b y g o p red blue yellow green orange purple
-* Not repeated
+* The player chooses 4 colours.
+* Colours: r b y g o p -> red blue yellow green orange purple
+* Colours can not be repeated.
 * Dead (black) Same colour, same position
 * Injured (white) Same colour, different position
-* You with 10 tries
+* The player has 10 tries
 
 == Versions
 What have been done in each version of the game.
@@ -334,4 +334,8 @@ image::./Sources/version1.4.0.png[Class diagram Version 1.4.0]
 
 I do not fully like how the controllers are and will try to improve them in a new version.
 
+== Conclusion
+
+The game structure and code has gone from 1 single class to a MVC structure
+making it more less *Viscous, Rigid, Fragile and Still* so now it is more *maintainable*.
 
